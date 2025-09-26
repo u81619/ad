@@ -41,137 +41,30 @@
     z-index: 20;
   }
 
-  @keyframes dropDown {
-    0% { top: -80px; opacity: 0; transform: scale(0.8); }
-    60% { top: 25px; opacity: 1; transform: scale(1.05); }
-    100% { top: 15px; transform: scale(1); }
-  }
-
-  @keyframes glow {
-    from { box-shadow: 0 0 10px rgba(255,255,255,0.5); }
-    to   { box-shadow: 0 0 25px rgba(255,255,255,0.9); }
-  }
+  @keyframes dropDown { 0% { top: -80px; opacity: 0; transform: scale(0.8); } 60% { top: 25px; opacity: 1; transform: scale(1.05); } 100% { top: 15px; transform: scale(1); } }
+  @keyframes glow { from { box-shadow: 0 0 10px rgba(255,255,255,0.5); } to { box-shadow: 0 0 25px rgba(255,255,255,0.9); } }
 
   /* ===== الهيدر ===== */
-  .header {
-    position: fixed;
-    top: 15px;
-    left: 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 12px 25px;
-    background: rgba(0,0,0,0.7);
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.8);
-    opacity: 0;
-    transform: translateX(-60px);
-    animation: slideIn 1s ease-out forwards;
-  }
-  .header .logo {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    border: 2px solid #fff;
-  }
-
-  @keyframes slideIn {
-    to { opacity: 1; transform: translateX(0); }
-  }
+  .header { position: fixed; top: 15px; left: 20px; display: flex; align-items: center; gap: 15px; padding: 12px 25px; background: rgba(0,0,0,0.7); border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.8); opacity: 0; transform: translateX(-60px); animation: slideIn 1s ease-out forwards; }
+  .header .logo { width: 40px; height: 40px; border-radius: 8px; border: 2px solid #fff; }
+  @keyframes slideIn { to { opacity: 1; transform: translateX(0); } }
 
   /* ===== الشبكة ===== */
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 20px;
-    padding: 40px;
-    z-index: 1;
-  }
-  .grid a {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    font-weight: bold;
-    font-size: 18px;
-    border-radius: 15px;
-    padding: 20px;
-    overflow: hidden;
-    text-decoration: none;
-    cursor: pointer;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-  }
-  .grid a::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, red, blue, purple, cyan, magenta, lime, yellow);
-    background-size: 400% 400%;
-    animation: rgbFlow 6s linear infinite;
-    z-index: -2;
-  }
-  .grid a::after {
-    content: "";
-    position: absolute;
-    inset: 3px;
-    background: rgba(0,0,0,0.75);
-    border-radius: 12px;
-    z-index: -1;
-  }
-  .grid a:hover {
-    transform: scale(1.15) rotate(-2deg);
-    box-shadow: 0 0 25px rgba(255,255,255,0.7);
-  }
-
-  @keyframes rgbFlow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 20px; padding: 40px; z-index: 1; }
+  .grid a { position: relative; display: flex; justify-content: center; align-items: center; text-align: center; color: #fff; font-weight: bold; font-size: 18px; border-radius: 15px; padding: 20px; overflow: hidden; text-decoration: none; cursor: pointer; transition: transform 0.4s ease, box-shadow 0.4s ease; }
+  .grid a::before { content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, red, blue, purple, cyan, magenta, lime, yellow); background-size: 400% 400%; animation: rgbFlow 6s linear infinite; z-index: -2; }
+  .grid a::after { content: ""; position: absolute; inset: 3px; background: rgba(0,0,0,0.75); border-radius: 12px; z-index: -1; }
+  .grid a:hover { transform: scale(1.15) rotate(-2deg); box-shadow: 0 0 25px rgba(255,255,255,0.7); }
+  @keyframes rgbFlow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 
   /* ===== قسم الثيمات في الأعلى يمين ===== */
-  .themes {
-    position: fixed;
-    top: 70px;
-    right: 20px;
-    display: flex;
-    gap: 12px;
-    background: rgba(0,0,0,0.7);
-    padding: 12px;
-    border-radius: 14px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.7);
-    z-index: 10;
-  }
-  .themes img {
-    width: 60px;
-    height: 40px;
-    border-radius: 6px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-  }
-  .themes img:hover {
-    transform: scale(1.2);
-  }
-  .themes img.selected {
-    border-color: lime;
-    transform: scale(1.2);
-  }
+  .themes { position: fixed; top: 70px; right: 20px; display: flex; gap: 12px; background: rgba(0,0,0,0.7); padding: 12px; border-radius: 14px; box-shadow: 0 0 15px rgba(0,0,0,0.7); z-index: 10; }
+  .themes img { width: 60px; height: 40px; border-radius: 6px; cursor: pointer; border: 2px solid transparent; transition: transform 0.3s ease, border-color 0.3s ease; }
+  .themes img:hover { transform: scale(1.2); }
+  .themes img.selected { border-color: lime; transform: scale(1.2); }
 
   /* ===== تأثير خفيف على الجسم ===== */
-  body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.2);
-    pointer-events: none;
-    backdrop-filter: blur(2px);
-  }
+  body::after { content: ""; position: fixed; inset: 0; background: rgba(0,0,0,0.2); pointer-events: none; backdrop-filter: blur(2px); }
 </style>
 </head>
 <body>
@@ -182,6 +75,18 @@
 <div class="grid">
   <a href="19/" target="_blank">افضل اختيار GoldHEN 2.4b18.6</a>
   <a href="1/" target="_blank">GoldHEN 2.4b18.5</a>
+
+  <!-- إعلان AdSense Fluid -->
+  <ins class="adsbygoogle"
+       style="display:block; margin: 20px auto;"
+       data-ad-format="fluid"
+       data-ad-layout-key="-6t+ed+2i-1n-4w"
+       data-ad-client="ca-pub-5750579754117985"
+       data-ad-slot="4415355019"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
   <a href="2/" target="_blank">GoldHEN 2.4b18.4</a>
   <a href="3/" target="_blank">GoldHEN 2.4b18.3</a>
   <a href="4/" target="_blank">GoldHEN 2.4b18.2</a>
